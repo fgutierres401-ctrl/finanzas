@@ -393,8 +393,9 @@ textarea.input { resize: vertical; min-height: 110px; line-height: 1.45; margin-
   position: fixed; left: 50%;
   bottom: calc(env(safe-area-inset-bottom) + 16px);
   transform: translateX(-50%);
-  display: flex; align-items: center; gap: 2px;
-  padding: 7px;
+  width: min(460px, calc(100% - 24px));
+  display: flex; align-items: center; justify-content: space-between; gap: 2px;
+  padding: 8px;
   border-radius: 999px;
   background: var(--card);
   -webkit-backdrop-filter: saturate(180%) blur(30px);
@@ -405,20 +406,21 @@ textarea.input { resize: vertical; min-height: 110px; line-height: 1.45; margin-
 }
 .tabbar button {
   border: 0; background: none; color: var(--muted);
-  display: flex; flex-direction: column; align-items: center; gap: 2px;
-  font-size: 10px; font-weight: 500;
-  padding: 7px 12px; border-radius: 999px; cursor: pointer;
+  flex: 1; min-width: 0;
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  font-size: 12px; font-weight: 600;
+  padding: 8px 4px; border-radius: 999px; cursor: pointer;
   transition: color 0.3s var(--ease), background 0.3s var(--ease), transform 0.2s var(--ease);
 }
-.tabbar button svg { width: 22px; height: 22px; }
+.tabbar button svg { width: 27px; height: 27px; }
 .tabbar button.active { color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); }
 .tabbar .fab {
-  width: 52px; height: 52px; padding: 0; margin: 0 4px;
+  flex: none !important; width: 60px; height: 60px; padding: 0 !important; margin: 0 6px;
   justify-content: center;
   background: linear-gradient(150deg, #2f5fc0, var(--navy)); color: #fff;
   box-shadow: 0 8px 22px rgba(31, 64, 140, 0.38);
 }
-.tabbar .fab svg { width: 24px; height: 24px; }
+.tabbar .fab svg { width: 28px; height: 28px; }
 .tabbar button:active { transform: scale(0.92); }
 
 /* ---------- Hoja modal ---------- */
@@ -578,8 +580,7 @@ select.input option { background: var(--card-solid); color: var(--text); }
 .toast.show { transform: translate(-50%, 0); }
 
 @media (max-width: 400px) {
-  .tabbar button { padding: 7px 9px; }
-  .tabbar button span { font-size: 9px; }
+  .tabbar button span { font-size: 11px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,6 +1,6 @@
 // Service worker: permite abrir la app sin conexión.
 // Cambia VERSION cada vez que actualices los archivos para que el teléfono descargue la nueva versión.
-const VERSION = 'finanzas-v2';
+const VERSION = 'finanzas-v3';
 const LOGOS = 'finanzas-logos';
 const FILES = [
   './', './index.html', './styles.css', './app.js', './manifest.json',
